@@ -1,66 +1,105 @@
-# node-js-getting-started
+# Sudoku Game
 
-A barebones Node.js app using [Express](https://expressjs.com/).
+A beautiful and interactive Sudoku game built with React and Express, deployed on Heroku.
 
-This application supports the tutorials for both the [Cedar and Fir generations](https://devcenter.heroku.com/articles/generations) of the Heroku platform. You can check them out here:
+## Features
 
-* [Getting Started on Heroku with Node.js](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
-* [Getting Started on Heroku Fir with Node.js](https://devcenter.heroku.com/articles/getting-started-with-nodejs-fir)
+- **Three Difficulty Levels**: Easy, Medium, and Hard puzzles
+- **Interactive Gameplay**: Click cells and type numbers to play
+- **Real-time Validation**: Immediate feedback on correct/incorrect moves
+- **Visual Feedback**: Highlighted cells, error indicators, and completion status
+- **Modern UI**: Beautiful gradient design with smooth animations
+- **Responsive Design**: Works perfectly on desktop and mobile devices
+
+## Game Controls
+
+- **Click** on any empty cell to select it
+- **Type numbers 1-9** to fill the cell
+- **Press Backspace/Delete** or **0** to clear a cell
+- **New Game**: Start a fresh puzzle
+- **Clear**: Reset the current puzzle to its initial state
+- **Solve**: Automatically solve the puzzle
 
 ## Running Locally
 
-Make sure you have [Node.js](http://nodejs.org/) and the [Heroku CLI](https://cli.heroku.com/) installed.
+Make sure you have Node.js and npm installed.
 
-```sh
-$ git clone https://github.com/heroku/node-js-getting-started.git # or clone your own fork
-$ cd node-js-getting-started
-$ npm install
-$ npm start
+```bash
+# Clone the repository
+git clone https://github.com/your-username/sudoku-app.git
+cd sudoku-app
+
+# Install dependencies
+npm install
+
+# Build the React application
+npm run build
+
+# Start the server
+npm start
 ```
 
-Your app should now be running on [localhost:5006](http://localhost:5006/).
+Your app should now be running on `http://localhost:5006`.
+
+## Development
+
+For development with hot reloading:
+
+```bash
+# Install dependencies
+npm install
+
+# Start development build with watch mode
+npm run build:dev
+
+# In another terminal, start the server
+npm start
+```
 
 ## Deploying to Heroku
 
-Using resources for this example app counts towards your usage. [Delete your app](https://devcenter.heroku.com/articles/heroku-cli-commands#heroku-apps-destroy) and [database](https://devcenter.heroku.com/articles/heroku-postgresql#removing-the-add-on) as soon as you are done experimenting to control costs.
+This application is ready to deploy to Heroku:
 
-### Deploy on [Cedar][cedar]
+```bash
+# Create a new Heroku app
+heroku create your-sudoku-app
 
-By default, apps use Eco dynos on [Cedar][cedar] if you are subscribed to Eco. Otherwise, it defaults to Basic dynos. The 
-Eco dynos plan is shared across all Eco dynos in your account and is recommended if you plan on deploying many small apps 
-to Heroku. Learn more about our low-cost plans [here](https://blog.heroku.com/new-low-cost-plans).
+# Deploy to Heroku
+git push heroku main
 
-Eligible students can apply for platform credits through our new [Heroku for GitHub Students program](https://blog.heroku.com/github-student-developer-program).
-
-```
-$ heroku create
-$ git push heroku main
-$ heroku open
+# Open the app
+heroku open
 ```
 
-### Deploy on [Fir][fir]
-
-By default, apps on [Fir][fir] use 1X-Classic dynos. To create an app on [Fir][fir] you'll need to 
-[create a private space](https://devcenter.heroku.com/articles/working-with-private-spaces#create-a-private-space)
-first.
+## Project Structure
 
 ```
-$ heroku spaces:create <space-name> --team <team-name> --generation fir
-$ heroku create --space <space-name>
-$ git push heroku main
-$ heroku open
+├── src/                 # React source code
+│   ├── App.js          # Main Sudoku game component
+│   ├── index.js        # React entry point
+│   ├── index.html      # HTML template
+│   └── styles.css      # Application styles
+├── public/             # Built files (generated)
+├── index.js            # Express server
+├── webpack.config.js   # Webpack configuration
+└── package.json        # Dependencies and scripts
 ```
 
-## Documentation
+## Technologies Used
 
-For more information about using Node.js on Heroku, see these Dev Center articles:
+- **Frontend**: React 18, CSS3
+- **Backend**: Express.js, Node.js
+- **Build Tool**: Webpack 5
+- **Deployment**: Heroku
 
-- [Getting Started on Heroku with Node.js](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
-- [Getting Started on Heroku Fir with Node.js](https://devcenter.heroku.com/articles/getting-started-with-nodejs-fir)
-- [Heroku Node.js Support](https://devcenter.heroku.com/articles/nodejs-support)
-- [Node.js on Heroku](https://devcenter.heroku.com/categories/nodejs)
-- [Best Practices for Node.js Development](https://devcenter.heroku.com/articles/node-best-practices)
-- [Using WebSockets on Heroku with Node.js](https://devcenter.heroku.com/articles/node-websockets)
+## Game Logic
 
-[cedar]: https://devcenter.heroku.com/articles/generations#cedar
-[fir]: https://devcenter.heroku.com/articles/generations#fir
+The Sudoku game includes:
+- Pre-defined puzzles for each difficulty level
+- Real-time validation against correct solutions
+- Visual indicators for errors and selections
+- Completion detection and celebration
+
+## License
+
+MIT License - feel free to use this project for learning or building your own applications!
